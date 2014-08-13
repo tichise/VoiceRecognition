@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <OpenEars/LanguageModelGenerator.h>
+#import <OpenEars/PocketsphinxController.h>
+#import <OpenEars/OpenEarsLogging.h>
+#import <OpenEars/AcousticModel.h>
 
-@interface ViewController : UIViewController
+@class PocketsphinxController;
+
+@interface ViewController : UIViewController<OpenEarsEventsObserverDelegate> {
+    IBOutlet UILabel *_voiceTextLabel;
+}
+
+@property (strong, nonatomic) NSString *lmPath;
+@property (strong, nonatomic) NSString *dicPath;
+@property (strong, nonatomic) PocketsphinxController *pocketsphinxController;
+@property (strong, nonatomic) OpenEarsEventsObserver *openEarsEventsObserver;
 
 @end

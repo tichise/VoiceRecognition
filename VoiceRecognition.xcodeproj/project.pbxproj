@@ -21,6 +21,11 @@
 		B0EAD768199B024000D6C4C0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EAD74A199B024000D6C4C0 /* UIKit.framework */; };
 		B0EAD770199B024000D6C4C0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0EAD76E199B024000D6C4C0 /* InfoPlist.strings */; };
 		B0EAD772199B024000D6C4C0 /* VoiceRecognitionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EAD771199B024000D6C4C0 /* VoiceRecognitionTests.m */; };
+		B0EAD780199B026600D6C4C0 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B0EAD77C199B026600D6C4C0 /* AcousticModelEnglish.bundle */; };
+		B0EAD781199B026600D6C4C0 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B0EAD77C199B026600D6C4C0 /* AcousticModelEnglish.bundle */; };
+		B0EAD784199B026600D6C4C0 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EAD77E199B026600D6C4C0 /* OpenEars.framework */; };
+		B0EAD785199B026600D6C4C0 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EAD77E199B026600D6C4C0 /* OpenEars.framework */; };
+		B0EAD789199B056200D6C4C0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EAD788199B056200D6C4C0 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,9 @@
 		B0EAD76D199B024000D6C4C0 /* VoiceRecognitionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VoiceRecognitionTests-Info.plist"; sourceTree = "<group>"; };
 		B0EAD76F199B024000D6C4C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B0EAD771199B024000D6C4C0 /* VoiceRecognitionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VoiceRecognitionTests.m; sourceTree = "<group>"; };
+		B0EAD77C199B026600D6C4C0 /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		B0EAD77E199B026600D6C4C0 /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
+		B0EAD788199B056200D6C4C0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +68,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0EAD789199B056200D6C4C0 /* AVFoundation.framework in Frameworks */,
 				B0EAD749199B024000D6C4C0 /* CoreGraphics.framework in Frameworks */,
 				B0EAD74B199B024000D6C4C0 /* UIKit.framework in Frameworks */,
 				B0EAD747199B024000D6C4C0 /* Foundation.framework in Frameworks */,
+				B0EAD784199B026600D6C4C0 /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +83,7 @@
 				B0EAD766199B024000D6C4C0 /* XCTest.framework in Frameworks */,
 				B0EAD768199B024000D6C4C0 /* UIKit.framework in Frameworks */,
 				B0EAD767199B024000D6C4C0 /* Foundation.framework in Frameworks */,
+				B0EAD785199B026600D6C4C0 /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +112,7 @@
 		B0EAD745199B024000D6C4C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B0EAD788199B056200D6C4C0 /* AVFoundation.framework */,
 				B0EAD746199B024000D6C4C0 /* Foundation.framework */,
 				B0EAD748199B024000D6C4C0 /* CoreGraphics.framework */,
 				B0EAD74A199B024000D6C4C0 /* UIKit.framework */,
@@ -112,6 +124,7 @@
 		B0EAD74C199B024000D6C4C0 /* VoiceRecognition */ = {
 			isa = PBXGroup;
 			children = (
+				B0EAD77B199B026600D6C4C0 /* Framework */,
 				B0EAD755199B024000D6C4C0 /* AppDelegate.h */,
 				B0EAD756199B024000D6C4C0 /* AppDelegate.m */,
 				B0EAD758199B024000D6C4C0 /* Main.storyboard */,
@@ -150,6 +163,15 @@
 				B0EAD76E199B024000D6C4C0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B0EAD77B199B026600D6C4C0 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				B0EAD77C199B026600D6C4C0 /* AcousticModelEnglish.bundle */,
+				B0EAD77E199B026600D6C4C0 /* OpenEars.framework */,
+			);
+			path = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0EAD75F199B024000D6C4C0 /* Images.xcassets in Resources */,
+				B0EAD780199B026600D6C4C0 /* AcousticModelEnglish.bundle in Resources */,
 				B0EAD751199B024000D6C4C0 /* InfoPlist.strings in Resources */,
 				B0EAD75A199B024000D6C4C0 /* Main.storyboard in Resources */,
 			);
@@ -239,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0EAD770199B024000D6C4C0 /* InfoPlist.strings in Resources */,
+				B0EAD781199B026600D6C4C0 /* AcousticModelEnglish.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +400,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VoiceRecognition/Framework",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VoiceRecognition/VoiceRecognition-Prefix.pch";
 				INFOPLIST_FILE = "VoiceRecognition/VoiceRecognition-Info.plist";
@@ -389,6 +417,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VoiceRecognition/Framework",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VoiceRecognition/VoiceRecognition-Prefix.pch";
 				INFOPLIST_FILE = "VoiceRecognition/VoiceRecognition-Info.plist";
@@ -405,6 +437,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PROJECT_DIR)/VoiceRecognition/Framework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VoiceRecognition/VoiceRecognition-Prefix.pch";
@@ -427,6 +460,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PROJECT_DIR)/VoiceRecognition/Framework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VoiceRecognition/VoiceRecognition-Prefix.pch";
