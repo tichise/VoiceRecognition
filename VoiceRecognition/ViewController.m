@@ -43,24 +43,22 @@
     
     
     if (error.code != noErr) {
-        
         NSLog(@"Error: %@",[error localizedDescription]);
     } else {
-        
         NSDictionary *languageGeneratorResults = [error userInfo];
         
-        self.lmPath = [languageGeneratorResults objectForKey:@"LMPath"];
-        self.dicPath = [languageGeneratorResults objectForKey:@"DictionaryPath"];
+        _languageModelPath = [languageGeneratorResults objectForKey:@"LMPath"];
+        _dictionaryPath = [languageGeneratorResults objectForKey:@"DictionaryPath"];
     }
 }
 
 -(void)setupVoiceRecognization {
     
-    if (_lmPath && _dicPath) {
+    if (_languageModelPath && _dictionaryPath) {
     } else {
         NSString *resorcePath = [[NSBundle mainBundle] resourcePath];
-        _lmPath = [NSString stringWithFormat:@"%@/%@", resorcePath, @"OpenEars1.languagemodel"];
-        _dicPath = [NSString stringWithFormat:@"%@/%@", resorcePath, @"OpenEars1.dic"];
+        _languageModelPath = [NSString stringWithFormat:@"%@/%@", resorcePath, @"OpenEars1.languagemodel"];
+        _dictionaryPath = [NSString stringWithFormat:@"%@/%@", resorcePath, @"OpenEars1.dic"];
     }
     
     self.pocketsphinxController = [[PocketsphinxController alloc] init];
@@ -69,7 +67,11 @@
 }
 
 - (void)startListening {
-    [_pocketsphinxController startListeningWithLanguageModelAtPath:_lmPath dictionaryAtPath:_dicPath acousticModelAtPath:[AcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO];
+    [_pocketsphinxController startListeningWithLanguageModelAtPath:_languageModelPath dictionaryAtPath:_dictionaryPath acousticModelAtPath:[AcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO];
+}
+
+- (void)stopListening {
+    [self.pocketsphinxController stopListening];
 }
 
 - (void)pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID {
@@ -78,7 +80,15 @@
 	NSLog(@"hypothesis is %@", hypothesis);
     NSLog(@"score is %@ and ID is %@", recognitionScore, utteranceID);
     
-    _voiceTextLabel.text = hypothesis;
+
+    
+    // 半角スペースを区切りとして文字列を分割
+    NSArray *hypothesisArray = [hypothesis componentsSeparatedByString:@" "];
+    for (NSString *word in hypothesisArray) {
+        NSLog(@"%@", word);
+    }
+    
+    _voiceTextLabel.text = hypothesisArray[0];
 }
 
 @end

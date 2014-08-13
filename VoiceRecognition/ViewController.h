@@ -18,8 +18,8 @@
     IBOutlet UILabel *_voiceTextLabel;
 }
 
-@property (strong, nonatomic) NSString *lmPath;
-@property (strong, nonatomic) NSString *dicPath;
+@property (strong, nonatomic) NSString *languageModelPath;
+@property (strong, nonatomic) NSString *dictionaryPath;
 @property (strong, nonatomic) PocketsphinxController *pocketsphinxController;
 @property (strong, nonatomic) OpenEarsEventsObserver *openEarsEventsObserver;
 
